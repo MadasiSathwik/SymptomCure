@@ -1,0 +1,431 @@
+/* Animation Keyframes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.15);
+  }
+  30% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.15);
+  }
+  60% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDelay {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Apply Animations */
+
+/* Logo Animation */
+.pulse, .logo i {
+  animation: heartbeat 2.5s infinite;
+}
+
+/* Fade-in Elements */
+.hero-content {
+  animation: fadeIn 1.2s ease-out;
+}
+
+.hero-content h2 {
+  animation: slideInLeft 1s ease-out;
+}
+
+.hero-content p {
+  animation: slideInLeft 1.2s ease-out;
+}
+
+/* Search Elements */
+.search-container {
+  animation: slideDown 0.8s ease-out;
+}
+
+/* Medicine Cards */
+.medicine-card {
+  animation: fadeIn 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.medicine-card:nth-child(odd) {
+  animation-delay: 0.1s;
+}
+
+.medicine-card:nth-child(even) {
+  animation-delay: 0.2s;
+}
+
+.medicine-card:nth-child(3n) {
+  animation-delay: 0.3s;
+}
+
+/* Detail View */
+.medicine-details.active .details-container {
+  animation: slideUp 0.4s ease-out;
+}
+
+/* Tab Transitions */
+.tab-content.active {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Feature Cards */
+.feature-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+}
+
+.feature-card i {
+  animation: float 3s ease-in-out infinite;
+}
+
+.feature-card:nth-child(2) i {
+  animation-delay: 0.5s;
+}
+
+.feature-card:nth-child(3) i {
+  animation-delay: 1s;
+}
+
+/* Form Elements */
+.form-group input, 
+.form-group textarea {
+  transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.submit-btn {
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* Loading Animation */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: rotate 1s linear infinite;
+}
+
+/* Button Hover Effects */
+.tab-btn {
+  transition: color 0.3s, border-bottom-color 0.3s, transform 0.2s;
+}
+
+.tab-btn:hover {
+  transform: translateY(-2px);
+}
+
+.tab-btn.active {
+  transform: translateY(0);
+}
+
+.view-details {
+  transition: color 0.3s, transform 0.2s;
+}
+
+.view-details:hover {
+  transform: translateY(-2px);
+}
+
+/* Symptom Tag Animation */
+.symptom-tag {
+  animation: slideInRight 0.4s ease-out;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.symptom-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* History Item Animation */
+.history-item {
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.history-item:hover {
+  transform: translateX(5px);
+}
+
+/* Social Icon Animation */
+.social-icons a {
+  transition: transform 0.4s, background-color 0.3s, box-shadow 0.3s;
+}
+
+.social-icons a:hover {
+  transform: translateY(-5px) scale(1.1);
+}
+
+/* Navigation Link Animation */
+nav ul li a {
+  position: relative;
+  transition: color 0.3s, background-color 0.3s, transform 0.2s;
+}
+
+nav ul li a:hover {
+  transform: translateY(-2px);
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 50%;
+  background-color: white;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+  width: 80%;
+  left: 10%;
+}
+
+/* Input Focus Animation */
+input:focus, 
+textarea:focus {
+  animation: pulse 0.5s ease-out;
+}
+
+/* Shimmer Effect for Cards */
+.medicine-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.medicine-card:hover::before {
+  opacity: 1;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Hero Gradient Animation */
+.hero {
+  background-size: 200% 200%;
+  animation: gradientBG 10s ease infinite;
+}
+
+/* Header animation */
+header {
+  background-size: 200% 200%;
+  animation: gradientBG 15s ease infinite;
+}
+
+/* Search button animation */
+#search-btn:active {
+  animation: pulse 0.3s ease;
+}
+
+/* Notification animation improvements */
+.notification.show {
+  animation: slideUp 0.4s ease-out forwards;
+}
+
+/* Feature Card Staggered Animation */
+.features .feature-card:nth-child(1) {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.features .feature-card:nth-child(2) {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.features .feature-card:nth-child(3) {
+  animation: fadeIn 1s ease-out;
+}
+
+/* About Section Background Animation */
+.about-section {
+  background-size: 200% 200%;
+  animation: gradientBG 15s ease infinite;
+}
+
+/* Medicine details animation */
+.medicine-detail-section {
+  animation: fadeInDelay 0.8s forwards;
+}
+
+.medicine-detail-section:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.medicine-detail-section:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.medicine-detail-section:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+/* Tab buttons animation on click */
+.tab-btn:active {
+  animation: pulse 0.3s;
+}
+
+/* Search input animation */
+.search-box input::placeholder {
+  transition: opacity 0.3s;
+}
+
+.search-box input:focus::placeholder {
+  opacity: 0.6;
+}
+
+/* Autocomplete items */
+.autocomplete-items div {
+  animation: fadeIn 0.3s ease-out;
+}

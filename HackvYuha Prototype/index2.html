@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediMatch - Medical Suggestion System</title>
+  <link rel="stylesheet" href="test.css">
+  <link rel="stylesheet" href="testa.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <i class="fas fa-heartbeat pulse"></i>
+        <h1>Symptom Green</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h2>Find the Right Medicine Based on Your Symptoms</h2>
+          <p>Symptom-Green helps you discover appropriate treatments from both Ayurvedic and Allopathic medicine systems.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="symptom-search">
+      <div class="container">
+        <div class="search-container">
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="symptom-input" placeholder="Enter your symptoms..." autocomplete="off">
+            <button id="search-btn">Search</button>
+          </div>
+          <div id="autocomplete-list" class="autocomplete-items"></div>
+        </div>
+        
+        <div class="selected-symptoms" id="selected-symptoms">
+          <h3>Selected Symptoms:</h3>
+          <div id="selected-symptoms-list" class="symptoms-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="results" id="results-section">
+      <div class="container">
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="allopathic">Allopathic</button>
+          <button class="tab-btn" data-tab="ayurvedic">Ayurvedic</button>
+        </div>
+
+        <div class="tab-content active" id="allopathic-content">
+          <h3>Allopathic Medicine Suggestion</h3>
+          <div id="allopathic-results" class="medicine-results"></div>
+        </div>
+
+        <div class="tab-content" id="ayurvedic-content">
+          <h3>Ayurvedic Medicine Recommendations</h3>
+          <div id="ayurvedic-results" class="medicine-results"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="medicine-details" id="medicine-details">
+      <div class="container">
+        <div class="details-container">
+          <button id="close-details" class="close-btn"><i class="fas fa-times"></i></button>
+          <div id="medicine-details-content"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="history" id="history-section">
+      <div class="container">
+        <h3>Search History</h3>
+        <div id="search-history" class="history-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2 style="color: white;">About SymptomGreen</h2>
+      <p style="color: white;">SymptomGreen is a comprehensive medicine suggestion system designed to bridge traditional Ayurvedic wisdom with modern Allopathic treatments. Our platform helps users find appropriate medications based on their symptoms while highlighting potential allergies and contraindications.</p>
+      
+      <div class="features">
+        <div class="feature-card">
+          <i class="fas fa-pills"></i>
+          <h3>Dual Medicine Systems</h3>
+          <p>Get recommendations from both Ayurvedic and Allopathic medicine systems.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-allergies"></i>
+          <h3>Allergy Awareness</h3>
+          <p>Receive important information about potential allergic reactions.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-history"></i>
+          <h3>Search History</h3>
+          <p>Keep track of your previous symptom searches for future reference.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <div class="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Your email">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Your message"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <i class="fas fa-heartbeat"></i>
+          <h3>SymptomGreen</h3>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Connect With Us</h4>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 SymptomGreen. All rights reserved. Created for Hackathon.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="notification" class="notification"></div>
+
+  <script src="data.js"></script>
+  <script src="utils.js"></script>
+  <script src="ui.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
